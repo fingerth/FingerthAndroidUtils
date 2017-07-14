@@ -1,1 +1,1 @@
-include ':app', ':FingerthDialogUtilsLibrary'
+include ':app', ':FingerthDialogUtilsLibrary', ':FingerthImageUtilsLibrary'

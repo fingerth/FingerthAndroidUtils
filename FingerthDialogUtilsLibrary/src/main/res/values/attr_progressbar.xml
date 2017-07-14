@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalWithNumberProgressBar">
+        <attr name="progressbar_reached_color" format="color" />
+        <attr name="progressbar_unreached_color" format="color" />
+
+        <attr name="progressbar_reached_height" format="dimension" />
+        <attr name="progressbar_unreached_height" format="dimension" />
+
+
+        <attr name="progressbar_text_size" format="dimension" />
+        <attr name="progressbar_text_color" format="color" />
+        <attr name="progressbar_text_offset" format="dimension" />
+        <attr name="progressbar_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundWidthNumberBar">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+</resources>

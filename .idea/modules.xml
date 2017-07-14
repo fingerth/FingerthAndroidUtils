@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FingerthAndroidUtils.iml" filepath="$PROJECT_DIR$/FingerthAndroidUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/FingerthDialogUtilsLibrary/FingerthDialogUtilsLibrary.iml" filepath="$PROJECT_DIR$/FingerthDialogUtilsLibrary/FingerthDialogUtilsLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FingerthImageUtilsLibrary/FingerthImageUtilsLibrary.iml" filepath="$PROJECT_DIR$/FingerthImageUtilsLibrary/FingerthImageUtilsLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

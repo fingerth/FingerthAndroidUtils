@@ -24,4 +24,7 @@
 
     <color name="green">#808080</color>
 
+    <color name="tip_color">#FF5252</color>
+    <color name="tip_dark_color">#FF2525</color>
+
 </resources>

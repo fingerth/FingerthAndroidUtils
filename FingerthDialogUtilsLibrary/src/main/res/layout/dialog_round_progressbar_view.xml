@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fingerth="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dialog_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_round_white"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <com.fingerth.supdialogutils.progressbar.round.RoundWidthNumberProgressBar
+            android:id="@+id/round_bar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:progress="50"
+            fingerth:progressbar_reached_color="#0EFF96"
+            fingerth:progressbar_reached_height="2dp"
+            fingerth:progressbar_text_color="#0EFF96"
+            fingerth:progressbar_text_size="14sp"
+            fingerth:progressbar_unreached_color="#dddddd"
+            fingerth:progressbar_unreached_height="1.5dp"
+            fingerth:radius="38dp" />
+
+        <!--注意：當我把長寬寫成80dp時， 為了讓progressbar居中並且全部顯示，這時 radius+progressbar_reached_height 要等于40dp（）-->
+
+        <TextView
+            android:id="@+id/message_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            android:gravity="center_horizontal"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:textColor="@color/gray_24"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+</FrameLayout>
