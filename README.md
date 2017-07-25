@@ -206,6 +206,6 @@ private AsyncTaskProgress asyncTaskProgress;
     }
 }
 ```
-## 四、小结一下 ##
+## 小结一下 ##
 - 对话框，我一般都用系统提供的了，自定义bug太多，没有Google提供的稳定。
 - 其实我还写了很多方法，代码很简单，入门级。
