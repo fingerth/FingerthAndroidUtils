@@ -6,13 +6,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fingerth.supdialogutils.progressbar.horizontal.HorizontalWithNumberProgressBar;
@@ -48,7 +46,6 @@ public class SYSDiaLogUtils {
         IosType,//ios風格的
         HorizontalWithNumberProgressBar,  // 進度條
         RoundWidthNumberProgressBar,     // 圓形進度條
-        Black,     // 不允许遮罩下面控件点击，背景黑色半透明
         ;
     }
 
@@ -57,6 +54,7 @@ public class SYSDiaLogUtils {
         Tip,//提示  黃黃的
         Warning //警告 紅色
     }
+
 
     /**
      * 語言適配
@@ -219,7 +217,6 @@ public class SYSDiaLogUtils {
      */
     private static AlertDialog tDialog;
 
-
     private static void showAlertDialog(Activity context, String title, String msg, String confirmStr, int type, boolean canceledOnTouchOutside) {
         if (context == null || context.isFinishing()) {
             return;
@@ -256,21 +253,24 @@ public class SYSDiaLogUtils {
                 }
                 dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_success));
                 //selector_green
-                confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_green));
+                confirm.setBackgroundResource(R.drawable.selector_green);
+                //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_green));
                 break;
             case 2:
                 if (TextUtils.isEmpty(title)) {
                     title = SYSDiaLogUtils.tipStr;
                 }
                 dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_tip));
-                confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_tip_color));
+                confirm.setBackgroundResource(R.drawable.selector_tip_color);
+                //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_tip_color));
                 break;
             case 3:
                 if (TextUtils.isEmpty(title)) {
                     title = SYSDiaLogUtils.errorStr;
                 }
                 dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_error));
-                confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_error_red));
+                confirm.setBackgroundResource(R.drawable.selector_error_red);
+                //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_error_red));
                 break;
             default:
                 break;
@@ -499,7 +499,7 @@ public class SYSDiaLogUtils {
     }
 
     /**
-     * 2.確認 取消  對話框部分
+     * 4.確認 取消  對話框部分
      * public enum SYSConfirmType {
      * Success,//成功 綠色
      * Tip,//提示  黃黃的
@@ -539,7 +539,7 @@ public class SYSDiaLogUtils {
             @Override
             public void onClick(View v) {
                 if (confirmDialogListener != null) {
-                    confirmDialogListener.onClickButton(true, false);
+                    confirmDialogListener.onClickButton(false, true);
                 }
                 if (confirmDialog != null && confirmDialog.isShowing()) {
                     confirmDialog.dismiss();
@@ -550,7 +550,7 @@ public class SYSDiaLogUtils {
             @Override
             public void onClick(View v) {
                 if (confirmDialogListener != null) {
-                    confirmDialogListener.onClickButton(false, true);
+                    confirmDialogListener.onClickButton(true, false);
                 }
                 if (confirmDialog != null && confirmDialog.isShowing()) {
                     confirmDialog.dismiss();
@@ -568,21 +568,24 @@ public class SYSDiaLogUtils {
                     }
                     dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_success));
                     //selector_green
-                    confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_green));
+                    confirm.setBackgroundResource(R.drawable.selector_green);
+                    //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_green));
                     break;
                 case Tip:
                     if (TextUtils.isEmpty(title) && TextUtils.isEmpty(msg)) {
                         title = SYSDiaLogUtils.tipStr;
                     }
                     dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_tip));
-                    confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_tip_color));
+                    confirm.setBackgroundResource(R.drawable.selector_tip_color);
+                    //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_tip_color));
                     break;
                 case Warning:
                     if (TextUtils.isEmpty(title) && TextUtils.isEmpty(msg)) {
                         title = SYSDiaLogUtils.errorStr;
                     }
                     dialog_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.dialog_error));
-                    confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_error_red));
+                    confirm.setBackgroundResource(R.drawable.selector_error_red);
+                    //confirm.setBackground(context.getResources().getDrawable(R.drawable.selector_error_red));
                     break;
                 default:
                     dialog_icon.setVisibility(View.GONE);
